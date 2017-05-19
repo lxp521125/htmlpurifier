@@ -219,7 +219,7 @@ class HTMLPurifier_DefinitionCache_Serializer extends HTMLPurifier_DefinitionCac
         if ($chmod === null) {
             // TODO: This races
             if (is_dir($directory)) return true;
-            return mkdir($directory);
+            return mkdir($directory, $chmod, true);
         }
         if (!is_dir($directory)) {
             $base = $this->generateBaseDirectoryPath($config);
